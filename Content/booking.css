@@ -1,0 +1,157 @@
+﻿body {
+}
+
+
+.Zebra_DatePicker {
+    top: 197px !important;
+    left: 15px !important;
+    width: 89% !important;
+}
+
+.Zebra_DatePicker_Icon {
+}
+
+.Zebra_DatePicker table {
+    width: 100%;
+}
+
+label {
+    font-weight: bold !important;
+}
+
+.service {
+    
+}
+
+.product {
+    
+}
+
+[data-role=content] h3 {
+    text-align: center;
+    margin-top: 0;
+    color: gray;
+    margin-bottom: 0;
+}
+
+[data-role=content] h5 {
+    padding-bottom: 5px;
+    border-bottom: solid 1px gray;
+    margin-left: 0;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+[data-role=content] h4 {
+    text-align: center;
+}
+
+.establishment-name {
+    
+}
+
+.establishment-address {
+    color: gray;
+}
+
+#booking-time-container {
+    /*border: solid 1px gray;*/
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    overflow: hidden;
+    /*display: inline-block;*/
+    /*margin: 0 auto !important;*/
+}
+
+.booking-interval {
+    float: left;
+}
+
+.booking-interval a.available {
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: solid 1px black;
+    margin: 5px;
+    display: block;
+    width: 70px;
+    text-align: center;
+}
+
+.booking-interval a.unavailable {
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: solid 1px black;
+    margin: 5px;
+    display: block;
+    width: 70px;
+    text-align: center;
+}
+
+.booking-interval a.available-other {
+    color: white;
+    background-color: orange;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: solid 1px black;
+    margin: 5px;
+    display: block;
+    width: 70px;
+    text-align: center;
+}
+
+.booking-interval a:hover {
+    color: gray;
+}
+
+.selected-interval {
+    border: solid 1px black;
+    background-color: white !important;
+    color: black !important;
+}
+
+#booking-info fieldset {
+    border: solid 1px gray;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#booking-info fieldset .booking-detail {
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+#booking-info fieldset .booking-detail label {
+    float: left;
+    width: 40%;
+    text-align: right;
+}
+
+#booking-info fieldset .booking-detail > span {
+    float: right;
+    width: 58%;
+}
+
+#booking-info fieldset legend {
+}
+
+.form-fields {
+    overflow: hidden;
+}
+
+.form-fields label{
+    text-align: right;
+    margin: 15px;
+}
+
+.form-fields input{
+}

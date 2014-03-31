@@ -1,0 +1,835 @@
+ @media screen and (orientation:landscape) 
+{
+
+#digiclock {
+	float: right;
+	margin: -120px 30px 0 0;
+	position: relative;
+	width: 350px;
+	height: 120px;	
+	display: block;
+}
+
+#plugin_container {
+    width:750px;
+    height:360px;
+	position: relative;
+    overflow: hidden;
+    font-family: Helvetica, sans-serif;
+    color:#fff;
+}
+
+#plugin_container p {
+	color: #fff;
+    margin:0;
+    padding:0;
+}
+
+#digital_container {
+    width:500px;
+    height:360px;
+    position:absolute;
+    top:40px;
+    left: 0px;
+    z-index:98;
+    -webkit-transform: scale(.5);
+}
+
+#clock {
+    float:left;
+    margin-left:48px;
+}
+
+#hours, #minutes {
+    width:200px;
+    height:200px;
+    float:left;
+    position:relative;
+}
+
+#minutes {
+    margin-left:4px;
+}
+
+#hours_bg, #minutes_bg {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:99;
+}
+
+.first_digit {
+    width:80px;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:20px;
+    z-index:100;
+}
+
+.second_digit {
+    width:80px;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:100px;
+    z-index:100;
+}
+
+.line {
+    width:175px;
+    height:2px;
+    background:#efefef;
+    position:absolute;
+    top:97px;
+    left:12px;
+    z-index:101;
+    font-size:1px;
+}
+
+#am_pm {
+    position:absolute;
+    top:156px;
+    left:130px;
+    z-index:110;
+}
+
+#weather {
+    width:100%;
+    height:206px;
+    position:absolute;
+    top: 0px;
+    left:260px;
+    z-index:105;
+    color:#fff;
+}
+
+#weather #local, #weather .loading {
+    display: none;
+}
+
+.city {
+    display: none;
+}
+
+.temp {
+    font-family: helvetica, arial, sans-serif;
+	font-size: 50px;
+	letter-spacing: -2px;
+	-webkit-text-fill-color: rgba(255,255,255,.9);
+	text-shadow: 1px 1px 1px #555555;
+	opacity: .95;
+}
+
+.temp .metric {
+    margin-left:-3px;
+}
+
+#weather #temp {
+    float:right;
+    margin: 150px 45px 0 0;
+    text-align:right;
+}
+
+#weather #date {
+    display: none;
+}
+
+} 
+
+
+
+
+
+
+
+
+
+#digiclock {
+	float: right;
+	margin: -80px 0 0 0;
+	position: relative;
+	width: 480px;
+	height: 60px;	
+	display: block;
+}
+
+#plugin_container {
+    width:500px;
+    height:60px;
+	position: relative;
+    font-family: Helvetica, sans-serif;
+    color:#fff;
+}
+
+#plugin_container p {
+	color: #fff;
+    margin:0;
+    padding:0;
+}
+
+#digital_container {
+    width:700px;
+    height:60px;
+    position:absolute;
+    top:0px;
+    left: 80px;
+    -webkit-transform: scale(.25);
+}
+
+#clock {
+    float:left;
+    margin-left:48px;
+}
+
+#hours, #minutes {
+    width:200px;
+    height:200px;
+    float:left;
+    position:relative;
+}
+
+#minutes {
+    margin-left:4px;
+}
+
+#hours_bg, #minutes_bg {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:99;
+}
+
+.first_digit {
+    width:80px;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:20px;
+    z-index:100;
+}
+
+.second_digit {
+    width:80px;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:100px;
+    z-index:100;
+}
+
+.line {
+    width:175px;
+    height:2px;
+    background:#efefef;
+    position:absolute;
+    top:97px;
+    left:12px;
+    z-index:101;
+    font-size:1px;
+}
+
+#am_pm {
+    position:absolute;
+    top:156px;
+    left:130px;
+    z-index:110;
+}
+
+#weather {
+    width:100%;
+    height:206px;
+    position:absolute;
+    top: 0px;
+    left:260px;
+    z-index:105;
+    color:#fff;
+}
+
+#weather #local, #weather .loading {
+    display: none;
+}
+
+.city {
+    display: none;
+}
+
+.temp {
+    font-family: helvetica, arial, sans-serif;
+	font-size: 50px;
+	letter-spacing: -2px;
+	-webkit-text-fill-color: rgba(255,255,255,.9);
+	text-shadow: 1px 1px 1px #555555;
+	opacity: .95;
+}
+
+.temp .metric {
+    margin-left:-3px;
+}
+
+#weather #temp {
+    float:right;
+    margin: 150px 45px 0 0;
+    text-align:right;
+}
+
+#weather #date {
+    display: none;
+}
+
+ 
+ @media screen and (device-aspect-ratio: 2/3) and (orientation:portrait) 
+{
+#digiclock {
+	float: right;
+	margin: -80px 0 0 0;
+	position: relative;
+	width: 480px;
+	height: 60px;	
+	display: block;
+}
+
+#plugin_container {
+    width:500px;
+    height:60px;
+	position: relative;
+    font-family: Helvetica, sans-serif;
+    color:#fff;
+}
+
+#plugin_container p {
+	color: #fff;
+    margin:0;
+    padding:0;
+}
+
+#digital_container {
+    width:700px;
+    height:60px;
+    position:absolute;
+    top:0px;
+    left: 80px;
+    -webkit-transform: scale(.25);
+}
+
+#clock {
+    float:left;
+    margin-left:48px;
+}
+
+#hours, #minutes {
+    width:200px;
+    height:200px;
+    float:left;
+    position:relative;
+}
+
+#minutes {
+    margin-left:4px;
+}
+
+#hours_bg, #minutes_bg {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:99;
+}
+
+.first_digit {
+    width:80px;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:20px;
+    z-index:100;
+}
+
+.second_digit {
+    width:80px;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:100px;
+    z-index:100;
+}
+
+.line {
+    width:175px;
+    height:2px;
+    background:#efefef;
+    position:absolute;
+    top:97px;
+    left:12px;
+    z-index:101;
+    font-size:1px;
+}
+
+#am_pm {
+    position:absolute;
+    top:156px;
+    left:130px;
+    z-index:110;
+}
+
+#weather {
+    width:100%;
+    height:206px;
+    position:absolute;
+    top: 0px;
+    left:260px;
+    z-index:105;
+    color:#fff;
+}
+
+#weather #local, #weather .loading {
+    display: none;
+}
+
+.city {
+    display: none;
+}
+
+.temp {
+    font-family: helvetica, arial, sans-serif;
+	font-size: 50px;
+	letter-spacing: -2px;
+	-webkit-text-fill-color: rgba(255,255,255,.9);
+	text-shadow: 1px 1px 1px #555555;
+	opacity: .95;
+}
+
+.temp .metric {
+    margin-left:-3px;
+}
+
+#weather #temp {
+    float:right;
+    margin: 150px 45px 0 0;
+    text-align:right;
+}
+
+#weather #date {
+    display: none;
+}
+}
+
+
+ @media screen and (device-aspect-ratio: 3/4) and (orientation:portrait) 
+{
+
+#digiclock {
+	float: right;
+	margin: -120px 30px 0 0;
+	position: relative;
+	width: 350px;
+	height: 120px;	
+	display: block;
+}
+
+#plugin_container {
+    width:750px;
+    height:300px;
+	position: relative;
+    overflow: hidden;
+    font-family: Helvetica, sans-serif;
+    color:#fff;
+}
+
+#plugin_container p {
+	color: #fff;
+    margin:0;
+    padding:0;
+}
+
+#digital_container {
+    width:500px;
+    height:360px;
+    position:absolute;
+    top:40px;
+    left: 0px;
+    -webkit-transform: scale(.5);
+}
+
+#clock {
+    float:left;
+    margin-left:48px;
+}
+
+#hours, #minutes {
+    width:200px;
+    height:200px;
+    float:left;
+    position:relative;
+}
+
+#minutes {
+    margin-left:4px;
+}
+
+#hours_bg, #minutes_bg {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:99;
+}
+
+.first_digit {
+    width:80px;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:20px;
+    z-index:100;
+}
+
+.second_digit {
+    width:80px;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:100px;
+    z-index:100;
+}
+
+.line {
+    width:175px;
+    height:2px;
+    background:#efefef;
+    position:absolute;
+    top:97px;
+    left:12px;
+    z-index:101;
+    font-size:1px;
+}
+
+#am_pm {
+    position:absolute;
+    top:156px;
+    left:130px;
+    z-index:110;
+}
+
+#weather {
+    width:100%;
+    height:206px;
+    position:absolute;
+    top: 0px;
+    left:260px;
+    z-index:105;
+    color:#fff;
+}
+
+#weather #local, #weather .loading {
+    display: none;
+}
+
+.city {
+    display: none;
+}
+
+.temp {
+    font-family: helvetica, arial, sans-serif;
+	font-size: 50px;
+	letter-spacing: -2px;
+	-webkit-text-fill-color: rgba(255,255,255,.9);
+	text-shadow: 1px 1px 1px #555555;
+	opacity: .95;
+}
+
+.temp .metric {
+    margin-left:-3px;
+}
+
+#weather #temp {
+    float:right;
+    margin: 150px 45px 0 0;
+    text-align:right;
+}
+
+#weather #date {
+    display: none;
+}
+
+}
+
+ @media screen and (device-aspect-ratio: 40/71) and (orientation:portrait) 
+{
+#digiclock {
+	float: right;
+	margin: -80px 0 0 0;
+	position: relative;
+	width: 480px;
+	height: 60px;	
+	display: block;
+}
+
+#plugin_container {
+    width:500px;
+    height:60px;
+	position: relative;
+    font-family: Helvetica, sans-serif;
+    color:#fff;
+}
+
+#plugin_container p {
+	color: #fff;
+    margin:0;
+    padding:0;
+}
+
+#digital_container {
+    width:700px;
+    height:60px;
+    position:absolute;
+    top:0px;
+    left: 80px;
+    -webkit-transform: scale(.25);
+}
+
+#clock {
+    float:left;
+    margin-left:48px;
+}
+
+#hours, #minutes {
+    width:200px;
+    height:200px;
+    float:left;
+    position:relative;
+}
+
+#minutes {
+    margin-left:4px;
+}
+
+#hours_bg, #minutes_bg {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:99;
+}
+
+.first_digit {
+    width:80px;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:20px;
+    z-index:100;
+}
+
+.second_digit {
+    width:80px;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:100px;
+    z-index:100;
+}
+
+.line {
+    width:175px;
+    height:2px;
+    background:#efefef;
+    position:absolute;
+    top:97px;
+    left:12px;
+    z-index:101;
+    font-size:1px;
+}
+
+#am_pm {
+    position:absolute;
+    top:156px;
+    left:130px;
+    z-index:110;
+}
+
+#weather {
+    width:100%;
+    height:206px;
+    position:absolute;
+    top: 0px;
+    left:260px;
+    z-index:105;
+    color:#fff;
+}
+
+#weather #local, #weather .loading {
+    display: none;
+}
+
+.city {
+    display: none;
+}
+
+.temp {
+    font-family: helvetica, arial, sans-serif;
+	font-size: 50px;
+	letter-spacing: -2px;
+	-webkit-text-fill-color: rgba(255,255,255,.9);
+	text-shadow: 1px 1px 1px #555555;
+	opacity: .95;
+}
+
+.temp .metric {
+    margin-left:-3px;
+}
+
+#weather #temp {
+    float:right;
+    margin: 150px 45px 0 0;
+    text-align:right;
+}
+
+#weather #date {
+    display: none;
+}
+}
+
+ @media screen and (device-aspect-ratio: 16/9) and (orientation:portrait) 
+{
+#digiclock {
+	float: right;
+	margin: -80px 0 0 0;
+	position: relative;
+	width: 480px;
+	height: 60px;	
+	display: block;
+}
+
+#plugin_container {
+    width:500px;
+    height:60px;
+	position: relative;
+    font-family: Helvetica, sans-serif;
+    color:#fff;
+}
+
+#plugin_container p {
+	color: #fff;
+    margin:0;
+    padding:0;
+}
+
+#digital_container {
+    width:700px;
+    height:60px;
+    position:absolute;
+    top:0px;
+    left: 80px;
+    -webkit-transform: scale(.25);
+}
+
+#clock {
+    float:left;
+    margin-left:48px;
+}
+
+#hours, #minutes {
+    width:200px;
+    height:200px;
+    float:left;
+    position:relative;
+}
+
+#minutes {
+    margin-left:4px;
+}
+
+#hours_bg, #minutes_bg {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:99;
+}
+
+.first_digit {
+    width:80px;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:20px;
+    z-index:100;
+}
+
+.second_digit {
+    width:80px;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:100px;
+    z-index:100;
+}
+
+.line {
+    width:175px;
+    height:2px;
+    background:#efefef;
+    position:absolute;
+    top:97px;
+    left:12px;
+    z-index:101;
+    font-size:1px;
+}
+
+#am_pm {
+    position:absolute;
+    top:156px;
+    left:130px;
+    z-index:110;
+}
+
+#weather {
+    width:100%;
+    height:206px;
+    position:absolute;
+    top: 0px;
+    left:260px;
+    z-index:105;
+    color:#fff;
+}
+
+#weather #local, #weather .loading {
+    display: none;
+}
+
+.city {
+    display: none;
+}
+
+.temp {
+    font-family: helvetica, arial, sans-serif;
+	font-size: 50px;
+	letter-spacing: -2px;
+	-webkit-text-fill-color: rgba(255,255,255,.9);
+	text-shadow: 1px 1px 1px #555555;
+	opacity: .95;
+}
+
+.temp .metric {
+    margin-left:-3px;
+}
+
+#weather #temp {
+    float:right;
+    margin: 150px 45px 0 0;
+    text-align:right;
+}
+
+#weather #date {
+    display: none;
+}
+}

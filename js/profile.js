@@ -1,0 +1,47 @@
+	$(function () {
+	var data = {pricelist: [{"Products":"Shanghai Shape ","Prices":"£15","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fexpress-manicure-shanghai-shape%2F"},
+{"Products":"Rapid Rio ","Prices":"£19","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fmanicure-rapid-rio%2F"},
+{"Products":"Perfect Panama ","Prices":"£29","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fmanicure-perfect-panama%2F"},
+{"Products":"Monte Carlo Minx ","Prices":"£34","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fminx-manicure-monte-carlo-minx%2F"},
+{"Products":"Nassau Non-Stop ","Prices":"£39","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fmanicure-nassau-non-stop%2F"},
+{"Products":"Two Weeks to Tahiti ","Prices":"£39","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fshellac-or-artistic-colour-gloss-two-weeks-to-tahiti%2F"},
+{"Products":"Fiji Full Set ","Prices":"£59","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fgel-or-acrylic-nails-fiji-full-set%2F"},
+{"Products":"Honolulu Hopper ","Prices":"£15","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fexpress-pedicure-honolulu-hopper%2F"},
+{"Products":"Tokyo Toes ","Prices":"£29","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fpedicure-tokyo-toes%2F"},
+{"Products":"Monte Carlo Minx ","Prices":"£34","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fminx-manicure-monte-carlo-minx%2F"},
+{"Products":"Two Weeks to Tahiti ","Prices":"£44","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Ftwo-weeks-to-tahiti-gel-nail-polish-pedicure%2F"},
+{"Products":"Polynesian Pedicure ","Prices":"£44","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fpedicure-polynesian-pedicure%2F"},
+{"Products":"Fiji Full Set ","Prices":"£59","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fgel-or-acrylic-nails-fiji-full-set%2F"},
+{"Products":"Caribbean Combi ","Prices":"£49","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fmanicure-pedicure-caribbean-combi%2F"},
+{"Products":"CaptainÕs Cockpit ","Prices":"£69","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fluxury-manicure-captains-cockpit%2F"},
+{"Products":"Tuscan Triple","Prices":"£99","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fgroup-manicure-london-trinidad-trio%2F"},
+{"Products":"The Mile High ","Prices":"£101","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fluxury-manicure-pedicurethe-mile-high%2F"},
+{"Products":"Bridal Bliss ","Prices":"£149","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fwedding-nails-bridal-bliss%2F"},
+{"Products":"Runway Repair  (hands or feet)","Prices":"£4-10","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fnail-repair-runway-repair%2F"},
+{"Products":"French Descent  (hands or feet)","Prices":"£10","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Ffrench-descent%2F"},
+{"Products":"Taxi Ôn Take Off  (hands or feet)","Prices":"£9-19","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fgel-nail-varnish-removal-taxi-n-take-off%2F"},
+{"Products":"Paraffin Paradise  (hands or feet)","Prices":"£15","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fparaffin-wax-paraffin-paradise%2F"},
+{"Products":"Chocks Away ","Prices":"£15","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fhard-skin-removal-chocks-awa%2F"},
+{"Products":"Florida Feet ","Prices":"£15","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fmassage-florida-feet%2F"},
+{"Products":"Hanoi Hands ","Prices":"£15","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fmassage-hanoi-hands%2F"},
+{"Products":"In-flight Infills ","Prices":"£44","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fgel-or-acrylic-infills-in-flight-infill%2F"},
+{"Products":"Spruce Goose ","Prices":"£29","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fmale-grooming-spruce-goose%2F"},
+{"Products":"Manhai Shape ","Prices":"£12","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fmale-grooming-manhai-shape%2F"},
+{"Products":"Ground Control ","Prices":"£39","Links":"http://mwnails.cloudhostedresources.com/?task=get&url=http%3A%2F%2Fwww.mwnails.com%2Ftreatments%2Fmale-grooming-ground-control%2F"},
+{"Products":"Gift Vouchers from ","Prices":"£10","Links":"#"},
+{"Products":"MWnails Nail File ","Prices":"£1.50","Links":"#"},
+{"Products":"Essie nail varnish ","Prices":"£9.95","Links":"#"},
+{"Products":"OPI Nail Colour ","Prices":"£10.50","Links":"#"},
+{"Products":"OPI Cuticle Oil ","Prices":"£9.60","Links":"#"},
+{"Products":"OPI Nail Envy ","Prices":"£18.55","Links":"#"},
+{"Products":"OPI Start to Finish ","Prices":"£13.55","Links":"#"},
+{"Products":"OPI Hand Cream small ","Prices":"£17.50","Links":"#"},
+{"Products":"OPI Hand Cream  large ","Prices":"£12.00","Links":"#"},
+{"Products":"Seche Vite ","Prices":"£9.95","Links":"#"},
+{"Products":"Glass Files ","Prices":"£13.00","Links":"#"}]};
+
+	//var tpl = '{{#data}}<li><a href="#">{{Products}}<span class="ui-li-count">{{Prices}}</a></li>{{/data}}';
+	var tpl = $('#tdata').html();
+	var html = Mustache.to_html(tpl, data);
+	$('#list').html(html);
+});
