@@ -1,7 +1,8 @@
-﻿//$("#bookings").on("pageinit", function () {
+﻿$("[data-role=page]").on("pageinit", function () {
     //$.session.clear();
-//    InitializeSiteConfig();
-//
+    InitializeSiteConfig();
+});
+
 // --------------------------------------------------------------//
 // ------------------- BOOK NOW FUNCTIONS ---------------- //
 // --------------------------------------------------------------//
@@ -11,7 +12,8 @@ $("#user-info").on("pageshow", function () {
 
 $("#user-info").on("pageinit", function () {
     var bookingHub;
-    $.connection.hub.url = 'http://easytables.co/appbookings/services/signalr';
+    $.connection.hub.url = 'http://www.appbookings.com/services/signalr';
+    //$.connection.hub.url = 'http://localhost:12091/signalr';
     bookingHub = $.connection.booking;
 
     $.connection.hub.start().done(function () {
@@ -26,16 +28,25 @@ $("#user-info").on("pageinit", function () {
             var name = $("#customer-name").val();
             var email = $("#customer-email").val();
 
-            var bookingData = { name: name, email: email, selectedDate: selectedDate, selectedTime: selectedTime, serviceId: selectedService, productId: selectedProduct, establishmentIdentifier: establishmentIdentifier };
-
             var serviceUrl = $("#service-url").val();
+            var getUrl = $("#get-url").val();
             $.mobile.showPageLoadingMsg("b", "Saving Bookings...");
-            $.post(serviceUrl + "booking", bookingData, function () {
+
+            var bookingData = { deviceToken: $.session.get("deviceToken"), lat: $.session.get("latitude"), longi: $.session.get("longitude"), name: name, email: email, selectedDate: selectedDate, selectedTime: selectedTime, serviceId: selectedService, productId: selectedProduct, establishmentIdentifier: establishmentIdentifier };
+            //$.post(serviceUrl + "booking", bookingData, function () {
+            //    $.mobile.hidePageLoadingMsg();
+            //    bookingHub.server.newBooking(bookingData);
+            //    alert("Booking successfully saved!");
+            //    $.mobile.changePage("#main");
+            //    //window.location.href = "/mobile";
+            //});
+            $.get(getUrl, bookingData, function (result) {
                 $.mobile.hidePageLoadingMsg();
                 bookingHub.server.newBooking(bookingData);
                 alert("Booking successfully saved!");
-                $.mobile.changePage("#bookings");
-            });
+                $.mobile.changePage("#main");
+                //window.location.href = "/mobile";
+            }, "json");
 
             return false;
         });
@@ -47,7 +58,7 @@ function InitializeBookNowInfo() {
     var selectedDate = $.session.get("booking-date");
     var selectedTime = $.session.get("selected-interval");
     if (selectedDate == undefined || selectedDate == null || selectedTime == null || selectedTime == undefined) {
-        $.mobile.changePage("#bookings");
+        $.mobile.changePage("#main");
     } else {
         var longDate = Date.parse(selectedDate).toString('dddd, MMMM d, yyyy');
         $("#date-info").html(longDate);
@@ -72,9 +83,9 @@ function InitializeBooknowEvents() {
     //    $.post(serviceUrl + "booking", { name: name, email: email, selectedDate: selectedDate, selectedTime: selectedTime, serviceId: selectedService, productId: selectedProduct, establishmentIdentifier: establishmentIdentifier }, function () {
     //        $.mobile.hidePageLoadingMsg();
     //        alert("Booking successfully saved!");
-    //        $.mobile.changePage("#bookings");
+    //        $.mobile.changePage("#main");
     //    });
-        
+
     //    return false;
     //});
 }
@@ -103,18 +114,18 @@ function GetDayString(dayInt) {
 // ------------------- PRODUCT DETAIL FUNCTIONS ---------------- //
 // --------------------------------------------------------------//
 $("#product-detail").on("pageshow", function () {
-    //if ($.session.get("product-list") == undefined) {
-    //    PopulateProducts();
-    //} else {
-    //    PopulateIntervals($("#product-list").val());
-    //}
-    
+    if ($.session.get("product-list") == undefined) {
+        PopulateProducts();
+    } else {
+        PopulateIntervals($("#product-list").val());
+    }
+
     if ($("#booking-time-container a").length <= 0) {
         $.mobile.showPageLoadingMsg("b", "Finding Available Slots...");
     }
 });
 
-$("#product-detail").on("pageshow", function () {
+$("#product-detail").on("pageinit", function () {
     //$.session.remove("service");
     PopulateProducts();
     InitializeProductEvents();
@@ -140,7 +151,7 @@ function PopulateIntervals(productId) {
     var bookingDate = $.session.get("booking-date");
     var serviceUrl = $("#service-url").val();
     $.mobile.showPageLoadingMsg("b", "Finding Available Slots...");
-    $.get(serviceUrl + "product", { id: productId }, function (product) {
+    $.get(serviceUrl + "product/getspecificproduct/" + productId, {}, function (product) {
         $.mobile.hidePageLoadingMsg();
         $.session.remove("booking-intervals");
         $.session.remove("selected-interval");
@@ -209,7 +220,7 @@ function PopulateProducts() {
     } else {
         $("#product-list").html("");
         if (JSON.parse($.session.get("product-list").length > 0)) {
-            $.each(JSON.parse($.session.get("product-list")), function(pIndex, product) {
+            $.each(JSON.parse($.session.get("product-list")), function (pIndex, product) {
                 $("#product-list").append("<option value=" + product.Id + ">" + product.Name + "</option>");
             });
         } else {
@@ -222,7 +233,7 @@ function PopulateProducts() {
 
 function SetBookingIntervalEvents() {
     if ($(".booking-interval a").length > 0) {
-        $(".booking-interval a").click(function() {
+        $(".booking-interval a").click(function () {
             $(".booking-interval a").removeClass("selected-interval");
             $.session.remove("selected-interval");
             if ($(this).hasClass("unavailable")) {
@@ -242,9 +253,8 @@ function SetBookingIntervalEvents() {
 // --------------------------------------------------------------//
 // -------------------- MAIN FUNCTIONS ------------------------- //
 // --------------------------------------------------------------//
-$("#bookings").on("pageinit", function () {
+$("#main").on("pageinit", function () {
     //$.mobile.showPageLoadingMsg("b", "Loading Services...");
-    InitializeSiteConfig();
     InitializeMainEvents();
     InitializeMainDefaultValues();
     PopulateServices();
@@ -259,7 +269,7 @@ function InitializeMainDefaultValues() {
     $("#booking-date").val($.session.get("booking-date"));
 }
 
-$("#bookings").on("pageshow", function () {
+$("#main").on("pageshow", function () {
     if ($.session.get("services") == undefined) {
         $.mobile.showPageLoadingMsg("b", "Loading Services...");
     }
@@ -268,7 +278,7 @@ $("#bookings").on("pageshow", function () {
 
 function InitializeSiteConfig() {
     if ($.session.get("establishment-name") == undefined || $.session.get("establishment-address") == undefined) {
-        $.mobile.changePage("#bookings");
+        $.mobile.changePage("#main");
     }
 
     var services = $("#site-services").val();
@@ -280,6 +290,46 @@ function InitializeSiteConfig() {
 
     $(".establishment-name").text($.session.get("establishment-name"));
     $(".establishment-address").text($.session.get("establishment-address"));
+
+
+
+    GMaps.geolocate({
+        success: function (position) {
+            $.session.set("latitude", position.coords.latitude);
+            $.session.set("longitude", position.coords.longitude);
+        },
+        error: function (error) {
+            alert('Geolocation failed: ' + error.message);
+        },
+        not_supported: function () {
+            alert("Your browser does not support geolocation");
+        },
+        always: function () {
+        }
+    });
+
+    // onSuccess Callback
+    //
+    var onSuccess = function (position) {
+        $.session.set("latitude", position.coords.latitude);
+        $.session.set("longitude", position.coords.longitude);
+        //alert('Latitude: ' + position.coords.latitude + '\n' +
+        //      'Longitude: ' + position.coords.longitude + '\n' +
+        //      'Altitude: ' + position.coords.altitude + '\n' +
+        //      'Accuracy: ' + position.coords.accuracy + '\n' +
+        //      'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '\n' +
+        //      'Heading: ' + position.coords.heading + '\n' +
+        //      'Speed: ' + position.coords.speed + '\n' +
+        //      'Timestamp: ' + position.timestamp + '\n');
+    };
+
+    // onError Callback
+    //
+    var onError = function () {
+        alert('Unable to set location!');
+    };
+
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 
 function InitializeMainWidgets() {
