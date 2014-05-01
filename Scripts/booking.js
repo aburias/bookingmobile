@@ -16,7 +16,7 @@ $("#user-info").on("pageinit", function () {
     //$.connection.hub.url = 'http://localhost:12091/signalr';
     bookingHub = $.connection.booking;
 
-    $.connection.hub.start().done(function () {
+    $.connection.hub.start({ transport: 'longPolling' }).done(function () {
         // Declare Event Here;
         //bookingHub.server.hello();
         $("#book-now-form").submit(function () {
@@ -33,20 +33,20 @@ $("#user-info").on("pageinit", function () {
             $.mobile.showPageLoadingMsg("b", "Saving Bookings...");
 
             var bookingData = { deviceToken: $.session.get("deviceToken"), lat: $.session.get("latitude"), longi: $.session.get("longitude"), name: name, email: email, selectedDate: selectedDate, selectedTime: selectedTime, serviceId: selectedService, productId: selectedProduct, establishmentIdentifier: establishmentIdentifier };
-            //$.post(serviceUrl + "booking", bookingData, function () {
-            //    $.mobile.hidePageLoadingMsg();
-            //    bookingHub.server.newBooking(bookingData);
-            //    alert("Booking successfully saved!");
-            //    $.mobile.changePage("#main");
-            //    //window.location.href = "/mobile";
-            //});
-            $.get(getUrl, bookingData, function (result) {
+            $.post(serviceUrl + "booking", bookingData, function () {
                 $.mobile.hidePageLoadingMsg();
                 bookingHub.server.newBooking(bookingData);
                 alert("Booking successfully saved!");
                 $.mobile.changePage("#main");
                 //window.location.href = "/mobile";
-            }, "json");
+            });
+            //$.get(getUrl, bookingData, function (result) {
+            //    $.mobile.hidePageLoadingMsg();
+            //    bookingHub.server.newBooking(bookingData);
+            //    alert("Booking successfully saved!");
+            //    $.mobile.changePage("#main");
+            //    //window.location.href = "/mobile";
+            //}, "json");
 
             return false;
         });
